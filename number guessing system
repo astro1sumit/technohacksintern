@@ -1,0 +1,32 @@
+import java.util.Scanner;
+public class sumi {
+    public static void guessingNumberGame(){
+        Scanner sc = new Scanner(System.in);
+        int num =(int)(100* Math.random());
+        int times = 8;
+        int i, guess;
+        System.out.println("A number is chosen" + " between 1 to 100." + "Guess the number" + " within 8 trials.");
+        for (i = 0; i < times; i++){
+            System.out.println("Guess the number:");
+            guess = sc.nextInt();
+            if (num == guess)
+            {
+                System.out.println("Congratulations!" + " You guessed the number.");
+                break;
+            }
+            else if (num > guess && i != times - 1){
+                System.out.println("The number is " + "greater than " + guess);
+            }
+            else if (num < guess && i != times - 1) {
+                System.out.println("The number is" + " less than " + guess);
+            }
+        }
+        if (i == times){
+            System.out.println("You have exhausted" + " K trials.");
+            System.out.println("The number was " + num);
+        }
+    }
+    public static void main(String arg[]){
+        guessingNumberGame();
+    }
+}
