@@ -1,0 +1,28 @@
+import java.util.*;
+public class sumi
+{
+	public static void main(String[] args) {
+		Scanner sc= new Scanner(System.in);
+		System.out.println("ENTER LENGTH OF PASSWARD: ");
+		int length=sc.nextInt();
+		System.out.print("Your generated password is : ");
+		System.out.println(Password(length));
+		}
+	  static char[] Password(int len){
+	    {
+	        String C_chars = "QWERTYUIOPASDFGHJKLZXCVBNM";
+	        String S_chars = "qwertyuiopasdfghjklzxcvbnm";
+	        String numbers = "0123456789";
+	        String symbols = "~!@#$%^&*()_+={}[];:></?";
+	        
+	        String all_values = C_chars + S_chars + numbers + symbols;
+	        Random rndm_method = new Random();
+	  
+	        char[] password = new char[len];
+	        for(int i=0;i<len;i++) {
+	           password[i] = all_values.charAt(rndm_method.nextInt(all_values.length()));
+	        }
+	        return password;
+    }
+  }
+}
